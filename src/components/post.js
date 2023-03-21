@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import LikeButton from './LikeButton';
+import LikeButton from './likebutton';
 
 const Post = ({ post }) => {
   const [liked, setLiked] = useState(post.liked);
