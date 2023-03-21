@@ -21,7 +21,7 @@
     "eject": "react-scripts eject",
     "prestart": "npm run tailwind",
     "prebuild": "npm run tailwind",
-    "tailwind": "tailwindcss-cli@latest build -o src/index.css"
+    "tailwind": "tailwindcss build -o src/index.css"
   },
   "eslintConfig": {
     "extends": [
