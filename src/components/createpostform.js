@@ -1,49 +1,49 @@
 import { useState } from "react";
 
 function CreatePostForm({ onSubmit }) {
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [name, setName] = useState("");
+  const [body, setBody] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Validate that title and content are not empty
-    if (!title.trim() || !content.trim()) {
+    if (!name.trim() || !body.trim()) {
       return;
     }
 
     const newPost = {
-      title,
-      content,
+      name,
+      body,
       date: Date.now()
     };
     onSubmit(newPost);
-    setTitle('');
-    setContent('');
+    setName('');
+    setBody('');
   };
 
   return (
     <form onSubmit={handleSubmit} className="max-w-md mx-auto">
       <div className="mb-4">
-        <label htmlFor="title" className="block text-gray-700 font-bold mb-2">
-          Title
+        <label htmlFor="name" className="block text-gray-700 font-bold mb-2">
+          Name
         </label>
         <input
           type="text"
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         />
       </div>
       <div className="mb-6">
-        <label htmlFor="content" className="block text-gray-700 font-bold mb-2">
-          Content
+        <label htmlFor="body" className="block text-gray-700 font-bold mb-2">
+          Body
         </label>
         <textarea
-          id="content"
-          value={content}
-          onChange={(e) => setContent(e.target.value)}
+          id="body"
+          value={body}
+          onChange={(e) => setBody(e.target.value)}
           className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
         ></textarea>
       </div>
